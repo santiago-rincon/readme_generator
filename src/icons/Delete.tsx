@@ -1,5 +1,3 @@
-import React from "react";
-
 export const DeleteIcon = ({ className }: { className?: string }) => {
   return (
     <svg

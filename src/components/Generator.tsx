@@ -1,8 +1,6 @@
 import { useDataStore } from "@store/dataStore";
-import { useRef } from "react";
 export const Generator = () => {
   const { data } = useDataStore();
-  const section = useRef<HTMLDivElement>(null);
   return (
     <div className="relative lg:relative">
       <section
