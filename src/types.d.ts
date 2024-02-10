@@ -6,6 +6,12 @@ export interface DataStore {
   deleteSocial: (uuid: string) => void;
   addSocial: (social: Social) => void;
   updateSocial: (social: Social) => void;
+  deleteTecnology: (uuid: string) => void;
+  addTecnology: (tecnology: Tecnology) => void;
+  updateTecnology: (tecnology: Tecnology) => void;
+  deleteProject: (uuid: string) => void;
+  addProject: (project: ProjectsEntity) => void;
+  updateProject: (project: ProjectsEntity) => void;
 }
 
 export interface FormData {
@@ -13,14 +19,18 @@ export interface FormData {
   greeating: string;
   title: string;
   description: string;
-  projects?: ProjectsEntity[];
+  subtitle: string;
   subdescription: string;
-  tecnologies: string[];
+  tecnologiesTitle: string;
+  tecnologies: Tecnology[];
   socialTitle: string;
   social: Social[];
+  projectsTitle: string;
+  projects: ProjectsEntity[];
 }
 
 interface ProjectsEntity {
+  id: string;
   title: string;
   link: string;
 }
@@ -34,10 +44,31 @@ interface Social {
   badge: string;
 }
 
+interface Tecnology {
+  id: string;
+  name: string;
+  backgroundColor: string;
+  colorLogo: string;
+  badge: string;
+}
+
 export interface SocialForm {
   uuid?: string;
   socialTitle: string;
   socialLink: string;
   socialColorBackground: string;
   socialColorLogo: string;
+}
+
+export interface TecnologyForm {
+  uuid?: string;
+  tecnologyName: string;
+  tecnologyColorBackground: string;
+  tecnologyColorLogo: string;
+}
+
+export interface ProjectForm {
+  uuid?: string;
+  projectName: string;
+  linkProject: string;
 }

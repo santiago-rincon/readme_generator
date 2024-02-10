@@ -3,6 +3,8 @@ import { Input } from "@components/ui/input";
 import { Textarea } from "@components/ui/textarea";
 import { useDataStore } from "@store/dataStore";
 import { BadgeGenerator } from "@components/BadgeGenerator";
+import { TecnologiesGenerator } from "@components/TecnologiesGenerator";
+import { ProjectsGenerator } from "@components/ProjectsGenerator";
 export function Form() {
   const { data, updateData } = useDataStore();
   const GLOBAL_CLASS =
@@ -63,6 +65,50 @@ export function Form() {
         />
       </div>
       <BadgeGenerator className="col-span-2" />
+      <div className="col-span-2">
+        <Label htmlFor="tecnologiesTitle">Tecnologías</Label>
+        <Input
+          type="text"
+          id="tecnologiesTitle"
+          className={`${GLOBAL_CLASS}`}
+          placeholder="Contactame en:"
+          value={data.tecnologiesTitle}
+          onChange={(e) => updateData({ tecnologiesTitle: e.target.value })}
+        />
+      </div>
+      <TecnologiesGenerator className="col-span-2" />
+      <div className="col-span-2">
+        <Label htmlFor="title">Más sobre mí</Label>
+        <Input
+          type="text"
+          id="title"
+          className={`${GLOBAL_CLASS}`}
+          placeholder="Más sobre mí"
+          value={data.subtitle}
+          onChange={(e) => updateData({ subtitle: e.target.value })}
+        />
+      </div>
+      <div className="col-span-2">
+        <Label htmlFor="description">Descripción</Label>
+        <Textarea
+          id="description"
+          className={`${GLOBAL_CLASS} h-22`}
+          value={data.subdescription}
+          onChange={(e) => updateData({ subdescription: e.target.value })}
+        />
+      </div>
+      <div className="col-span-2">
+        <Label htmlFor="projectsTitle">Proyectos</Label>
+        <Input
+          type="text"
+          id="projectsTitle"
+          className={`${GLOBAL_CLASS}`}
+          placeholder="Mis proyectos:"
+          value={data.projectsTitle}
+          onChange={(e) => updateData({ projectsTitle: e.target.value })}
+        />
+      </div>
+      <ProjectsGenerator className="col-span-2" />
     </section>
   );
 }

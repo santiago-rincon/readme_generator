@@ -11,8 +11,7 @@ import type { Social, SocialForm } from "@/types";
 
 export const BadgeGenerator = ({ className }: { className?: string }) => {
   const { data, deleteSocial, addSocial,updateSocial } = useDataStore();
-  const GLOBAL_CLASS =
-    "bg-neutral-400/70 dark:bg-neutral-700 placeholder:text-black/60 dark:placeholder:text-white/60 transition-colors";
+  const GLOBAL_CLASS = "bg-neutral-400/70 dark:bg-neutral-700 placeholder:text-black/60 dark:placeholder:text-white/60 transition-colors";
   const {
     register,
     handleSubmit,
@@ -130,7 +129,7 @@ export const BadgeGenerator = ({ className }: { className?: string }) => {
           Añadir
         </Button>
       </form>
-      <div className="flex mt-4 gap-x-2 flex-wrap">
+      <div className="flex mt-4 gap-x-2 gap-y-3 flex-wrap">
         {data.social.map((social) => {
           return (
             <Badge
